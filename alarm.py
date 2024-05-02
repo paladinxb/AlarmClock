@@ -30,7 +30,8 @@ class AlarmClock(tk.Tk):
 
         self.help_button.pack(pady=10)
         self.help_button2.pack(pady=10)
-        button = tk.Button(self, text="GitHub разработчика", command=self.open_website)
+        button = tk.Button(self, text="GitHub разработчика", command=self.show_help)
+        #button = tk.Button(self, text="GitHub разработчика", command=self.open_website)
 
 # Размещаем кнопку на главном окне
         button.pack()
@@ -41,7 +42,6 @@ class AlarmClock(tk.Tk):
         alarm_time_str = self.time_entry.get().strip()  # Strip leading and trailing spaces
         try:
             alarm_time = datetime.strptime(alarm_time_str, "%H:%M").time()
-            current_time = datetime.now().time()
             # Создаем объект datetime с текущей датой и временем будильника
             combined_datetime = datetime.combine(datetime.today(), alarm_time)
 
